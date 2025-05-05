@@ -1,0 +1,3 @@
+# lssycl
+
+List SYCL devices
