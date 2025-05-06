@@ -5,8 +5,10 @@ project(lssycl
     LANGUAGES CXX
 )
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+if (APPLE)
+    set(CMAKE_CXX_STANDARD 17)
+    set(CMAKE_CXX_STANDARD_REQUIRED True)
+endif()
 
 find_package(fmt 8.0 REQUIRED)
 find_package(AdaptiveCpp REQUIRED)
