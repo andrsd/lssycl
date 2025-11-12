@@ -5,16 +5,13 @@ project(lssycl
     LANGUAGES CXX
 )
 
-if (APPLE)
-    set(CMAKE_CXX_STANDARD 17)
-    set(CMAKE_CXX_STANDARD_REQUIRED True)
-endif()
-
 find_package(fmt 8.0 REQUIRED)
 find_package(AdaptiveCpp REQUIRED)
 
 add_executable(${PROJECT_NAME} main.cpp)
 add_sycl_to_target(TARGET ${PROJECT_NAME})
+
+target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 
 target_include_directories(${PROJECT_NAME}
     PUBLIC
