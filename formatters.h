@@ -15,7 +15,8 @@ struct fmt::formatter<cl::sycl::info::device_type> {
 
     template <typename FormatContext>
     auto
-    format(const cl::sycl::info::device_type & obj, FormatContext & ctx) -> decltype(ctx.out())
+    format(const cl::sycl::info::device_type & obj, FormatContext & ctx) const
+        -> decltype(ctx.out())
     {
         if (obj == cl::sycl::info::device_type::cpu)
             return fmt::format_to(ctx.out(), "CPU");
@@ -40,8 +41,8 @@ struct fmt::formatter<cl::sycl::info::global_mem_cache_type> {
 
     template <typename FormatContext>
     auto
-    format(const cl::sycl::info::global_mem_cache_type & obj,
-           FormatContext & ctx) -> decltype(ctx.out())
+    format(const cl::sycl::info::global_mem_cache_type & obj, FormatContext & ctx) const
+        -> decltype(ctx.out())
     {
         if (obj == cl::sycl::info::global_mem_cache_type::none)
             return fmt::format_to(ctx.out(), "none");
@@ -64,7 +65,8 @@ struct fmt::formatter<cl::sycl::info::local_mem_type> {
 
     template <typename FormatContext>
     auto
-    format(const cl::sycl::info::local_mem_type & obj, FormatContext & ctx) -> decltype(ctx.out())
+    format(const cl::sycl::info::local_mem_type & obj, FormatContext & ctx) const
+        -> decltype(ctx.out())
     {
         if (obj == cl::sycl::info::local_mem_type::none)
             return fmt::format_to(ctx.out(), "none");
@@ -87,8 +89,8 @@ struct fmt::formatter<cl::sycl::info::execution_capability> {
 
     template <typename FormatContext>
     auto
-    format(const cl::sycl::info::execution_capability & obj,
-           FormatContext & ctx) -> decltype(ctx.out())
+    format(const cl::sycl::info::execution_capability & obj, FormatContext & ctx) const
+        -> decltype(ctx.out())
     {
         if (obj == cl::sycl::info::execution_capability::exec_kernel)
             return fmt::format_to(ctx.out(), "kernel");
@@ -109,7 +111,7 @@ struct fmt::formatter<cl::sycl::aspect> {
 
     template <typename FormatContext>
     auto
-    format(const cl::sycl::aspect & obj, FormatContext & ctx) -> decltype(ctx.out())
+    format(const cl::sycl::aspect & obj, FormatContext & ctx) const -> decltype(ctx.out())
     {
         if (obj == cl::sycl::aspect::cpu)
             return fmt::format_to(ctx.out(), "cpu");
@@ -164,7 +166,7 @@ struct fmt::formatter<cl::sycl::info::fp_config> {
 
     template <typename FormatContext>
     auto
-    format(const cl::sycl::info::fp_config & obj, FormatContext & ctx) -> decltype(ctx.out())
+    format(const cl::sycl::info::fp_config & obj, FormatContext & ctx) const -> decltype(ctx.out())
     {
         if (obj == cl::sycl::info::fp_config::denorm)
             return fmt::format_to(ctx.out(), "deform");
