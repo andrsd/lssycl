@@ -8,7 +8,7 @@
 template <>
 struct fmt::formatter<cl::sycl::info::device_type> {
     constexpr auto
-    parse(fmt::format_parse_context & ctx) -> fmt::format_parse_context::iterator
+    parse(fmt::format_parse_context & ctx) const -> fmt::format_parse_context::iterator
     {
         return ctx.begin();
     }
@@ -34,7 +34,7 @@ struct fmt::formatter<cl::sycl::info::device_type> {
 template <>
 struct fmt::formatter<cl::sycl::info::global_mem_cache_type> {
     constexpr auto
-    parse(fmt::format_parse_context & ctx) -> fmt::format_parse_context::iterator
+    parse(fmt::format_parse_context & ctx) const -> fmt::format_parse_context::iterator
     {
         return ctx.begin();
     }
@@ -58,7 +58,7 @@ struct fmt::formatter<cl::sycl::info::global_mem_cache_type> {
 template <>
 struct fmt::formatter<cl::sycl::info::local_mem_type> {
     constexpr auto
-    parse(fmt::format_parse_context & ctx) -> fmt::format_parse_context::iterator
+    parse(fmt::format_parse_context & ctx) const -> fmt::format_parse_context::iterator
     {
         return ctx.begin();
     }
@@ -82,7 +82,7 @@ struct fmt::formatter<cl::sycl::info::local_mem_type> {
 template <>
 struct fmt::formatter<cl::sycl::info::execution_capability> {
     constexpr auto
-    parse(fmt::format_parse_context & ctx) -> fmt::format_parse_context::iterator
+    parse(fmt::format_parse_context & ctx) const -> fmt::format_parse_context::iterator
     {
         return ctx.begin();
     }
@@ -104,7 +104,7 @@ struct fmt::formatter<cl::sycl::info::execution_capability> {
 template <>
 struct fmt::formatter<cl::sycl::aspect> {
     constexpr auto
-    parse(fmt::format_parse_context & ctx) -> fmt::format_parse_context::iterator
+    parse(fmt::format_parse_context & ctx) const -> fmt::format_parse_context::iterator
     {
         return ctx.begin();
     }
@@ -159,7 +159,7 @@ struct fmt::formatter<cl::sycl::aspect> {
 template <>
 struct fmt::formatter<cl::sycl::info::fp_config> {
     constexpr auto
-    parse(fmt::format_parse_context & ctx) -> fmt::format_parse_context::iterator
+    parse(fmt::format_parse_context & ctx) const -> fmt::format_parse_context::iterator
     {
         return ctx.begin();
     }
