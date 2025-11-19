@@ -10,6 +10,9 @@ find_package(AdaptiveCpp REQUIRED)
 
 add_executable(${PROJECT_NAME} main.cpp)
 add_sycl_to_target(TARGET ${PROJECT_NAME})
+if (APPLE)
+    target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
+endif()
 
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 
